@@ -30,7 +30,7 @@ add lines
 
 #!/bin/bash
 cat /usr/share/namebench/data/alexa-top-2000-domains.txt | awk  '{print $2 " A" }' > /tmp/test.dns
-nsperf -Q 200 -q 1 -t 3  -d /tmp/test.dns -s 127.0.0.1 >> /var/log/dnsperf.log
+dnsperf -Q 200 -t 1  -d /tmp/test.dns -s 127.0.0.1 >> /var/log/dnsperf.log
 
 4) add in crontab every 10 minutes /usr/local/bin/warmupdns.sh
 
